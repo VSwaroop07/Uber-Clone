@@ -54,3 +54,32 @@ The request body should be a JSON object containing the following fields:
   "password": "secret123"
 }
 ```
+## Get User Profile
+
+### Endpoint
+`GET /users/profile`
+
+### Description
+This endpoint retrieves the profile information of the authenticated user.
+
+### Authentication
+This endpoint requires a valid JWT token to be provided in the request headers.
+
+### Possible Responses
+- `200 OK`: Returns a JSON object containing the authenticated user's profile information.
+- `401 Unauthorized`: Returns an error if the user is not authenticated.
+
+## User Logout
+
+### Endpoint
+`GET /users/logout`
+
+### Description
+This endpoint logs out the authenticated user by clearing the authentication token and blacklisting it.
+
+### Authentication
+This endpoint requires a valid JWT token to be provided in the request headers.
+
+### Possible Responses
+- `200 OK`: Returns a message indicating that the user has been logged out successfully.
+- `401 Unauthorized`: Returns an error if the user is not authenticated.
