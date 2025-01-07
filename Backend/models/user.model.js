@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const userShema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     fullname: {
         firstname: {
             type: String,
@@ -20,7 +20,7 @@ const userShema = new mongoose.Schema({
         minlength: [5, 'Email must not be at '],
     },
     password: {
-        type: string,
+        type: String,
         required: true,
         select:false,
     },
