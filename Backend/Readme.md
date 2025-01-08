@@ -83,3 +83,42 @@ This endpoint requires a valid JWT token to be provided in the request headers.
 ### Possible Responses
 - `200 OK`: Returns a message indicating that the user has been logged out successfully.
 - `401 Unauthorized`: Returns an error if the user is not authenticated.
+## Captain Registration
+
+### Endpoint
+`POST /captain/register`
+
+### Description
+This endpoint registers a new captain. Upon successful registration, a JSON Web Token (JWT) is generated and returned along with the captain details.
+
+### Request Body
+The request body should be a JSON object containing the following fields:
+
+- `fullname` (object): An object containing the captain's first and last name.
+  - `firstname` (string): The first name of the captain. Must be at least 3 characters long.
+  - `lastname` (string): The last name of the captain. Must be at least 3 characters long.
+- `email` (string): The email address of the captain. Must be a valid email format.
+- `password` (string): The password of the captain. Must be at least 6 characters long.
+- `vehicle` (object): An object containing the vehicle details.
+  - `color` (string): The color of the vehicle. Must be at least 3 characters long.
+  - `plate` (string): The plate number of the vehicle. Must be at least 3 characters long.
+  - `capacity` (number): The capacity of the vehicle. Must be a number.
+  - `vehicleType` (string): The type of the vehicle. Must be one of the following: `car`, `motorcycle`, `auto`.
+
+### Request Example
+```json
+{
+  "fullname": {
+    "firstname": "John",
+    "lastname": "Smith"
+  },
+  "email": "john.smith@example.com",
+  "password": "securePassword123",
+  "vehicle": {
+    "color": "Red",
+    "plate": "XYZ123",
+    "capacity": 4,
+    "vehicleType": "car"
+  }
+}
+```
