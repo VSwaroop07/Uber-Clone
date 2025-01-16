@@ -2,6 +2,30 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const userRegister = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userData, setUserData] = useState({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setUserData({
+      username: {
+        firstName: firstName,
+        lastName: lastName,
+      },
+      email: email,
+      password: password,
+    });
+    console.log(userData);
+    setEmail("");
+    setFirstName("");
+    setLastName("");
+    setPassword("");
+  };
+
   return (
     <>
       <img className="w-20" src="/uber-logo-png.png" alt="Uber Logo" />
@@ -21,6 +45,8 @@ const userRegister = () => {
                 id=""
                 required
                 placeholder="First Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
               />
               <input
                 className="bg-[#eeeeee] rounded px-4 py-2 border w-1/2 text-sm placeholder:text-sm"
@@ -28,6 +54,8 @@ const userRegister = () => {
                 name="lastName"
                 id=""
                 placeholder="Last Name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
 
@@ -39,6 +67,8 @@ const userRegister = () => {
               id=""
               required
               placeholder="example@mail.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <h3 className=" mb-2 font-medium">Password</h3>
             <input
@@ -48,6 +78,8 @@ const userRegister = () => {
               id=""
               required
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button
               type="submit"
