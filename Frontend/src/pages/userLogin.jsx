@@ -9,6 +9,7 @@ const userLogin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setUserData({ email, password });
+    // console.log(userData);
     setEmail("");
     setPassword("");
   };

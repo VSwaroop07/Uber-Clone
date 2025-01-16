@@ -12,14 +12,14 @@ const userRegister = () => {
     e.preventDefault();
 
     setUserData({
-      username: {
+      fullName: {
         firstName: firstName,
         lastName: lastName,
       },
       email: email,
       password: password,
     });
-    console.log(userData);
+    // console.log(userData);
     setEmail("");
     setFirstName("");
     setLastName("");
@@ -94,12 +94,8 @@ const userRegister = () => {
           </form>
         </div>
         <div>
-          {/* <Link
-            to="/captain-login"
-            className="bg-[#111] font-semibold text-white rounded px-4 py-2 w-full text-sm placeholder:text-sm block text-center"
-          >
-            Sign Up as Captian
-          </Link> */}
+        <p className='text-[10px] leading-tight'>This site is protected by reCAPTCHA and the <span className='underline'>Google Privacy
+        Policy</span> and <span className='underline'>Terms of Service apply</span>.</p>
         </div>
       </div>
     </>
