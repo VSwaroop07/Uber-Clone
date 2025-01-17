@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { userDataContext } from "../context/userContext";
 
 const userRegister = () => {
   const [firstName, setFirstName] = useState("");
@@ -8,18 +10,31 @@ const userRegister = () => {
   const [password, setPassword] = useState("");
   const [userData, setUserData] = useState({});
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();
 
-    setUserData({
-      fullName: {
-        firstName: firstName,
-        lastName: lastName,
+  const { user, setUser } = React.useContext(userDataContext);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newUser = {
+      fullname: {
+        firstname: firstName,
+        lastname: lastName,
       },
       email: email,
       password: password,
-    });
-    // console.log(userData);
+    };
+
+    const responce = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/users/register`,
+      newUser
+    );
+
+    if (responce.status === 201) {
+      const data = responce.data;
+      setUser(data.user);
+
+      navigate("/home");
+    }
     setEmail("");
     setFirstName("");
     setLastName("");
@@ -94,8 +109,11 @@ const userRegister = () => {
           </form>
         </div>
         <div>
-        <p className='text-[10px] leading-tight'>This site is protected by reCAPTCHA and the <span className='underline'>Google Privacy
-        Policy</span> and <span className='underline'>Terms of Service apply</span>.</p>
+          <p className="text-[10px] leading-tight">
+            This site is protected by reCAPTCHA and the{" "}
+            <span className="underline">Google Privacy Policy</span> and{" "}
+            <span className="underline">Terms of Service apply</span>.
+          </p>
         </div>
       </div>
     </>

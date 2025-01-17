@@ -12,9 +12,9 @@ const captainRegister = () => {
       e.preventDefault();
   
       setCaptainData({
-        fullName: {
-          firstName: firstName,
-          lastName: lastName,
+        fullname: {
+          firstname: firstName,
+          lastname: lastName,
         },
         email: email,
         password: password,

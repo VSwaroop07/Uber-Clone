@@ -1,14 +1,35 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { userDataContext } from "../context/userContext";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const userLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userData, setUserData] = useState({});
 
-  const handleSubmit = (e) => {
+  const { user, setUser } = React.useContext(userDataContext);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setUserData({ email, password });
+
+    const userData = {
+      email: email,
+      password: password,
+    };
+
+    const responce = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/users/login`,
+      userData
+    );
+
+    if (responce.status === 200) {
+      const data = responce.data;
+      setUser(data.user);
+      navigate("/home");
+    }
     // console.log(userData);
     setEmail("");
     setPassword("");
@@ -61,7 +82,10 @@ const userLogin = () => {
           </form>
         </div>
         <div>
-          <Link to='/captain-login' className="bg-[#111] font-semibold text-white rounded px-4 py-2 w-full text-lg placeholder:text-base block text-center">
+          <Link
+            to="/captain-login"
+            className="bg-[#111] font-semibold text-white rounded px-4 py-2 w-full text-lg placeholder:text-base block text-center"
+          >
             Sign in as Captian
           </Link>
         </div>
