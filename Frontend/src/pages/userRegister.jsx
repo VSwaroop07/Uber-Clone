@@ -32,7 +32,7 @@ const userRegister = () => {
     if (responce.status === 201) {
       const data = responce.data;
       setUser(data.user);
-
+      localStorage.setItem("token", data.token);
       navigate("/home");
     }
     setEmail("");
