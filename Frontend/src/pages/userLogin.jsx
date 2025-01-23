@@ -87,7 +87,7 @@ const userLogin = () => {
             to="/captain-login"
             className="bg-[#111] font-semibold text-white rounded px-4 py-2 w-full text-lg placeholder:text-base block text-center"
           >
-            Sign in as Captian
+            Sign in as Captain
           </Link>
         </div>
       </div>
