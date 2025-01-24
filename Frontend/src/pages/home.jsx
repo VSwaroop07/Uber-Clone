@@ -3,6 +3,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import LocationPanel from "../components/LocationPanel";
 import "remixicon/fonts/remixicon.css";
+import VehiclePanel from "../components/VehiclePanel";
+import ConfirmRide from "../components/ConfirmRide";
 
 const home = () => {
   const [pickUpLocation, setPickUpLocation] = useState("");
@@ -10,6 +12,10 @@ const home = () => {
   const [panal, setPanal] = useState(false);
   const panalRef = useRef(null);
   const panalClose = useRef(null);
+  const vehiclePanelRef = useRef(null);
+  const confirmRideRef = useRef(null);
+  const [vehiclePanel, setVehiclePanal] = useState(null);
+  const [confirmRide, setConfirmRide] = useState(null);
   const submitHandler = (e) => {
     e.preventDefault();
   };
@@ -35,9 +41,32 @@ const home = () => {
     }
   }, [panal]);
 
+  useGSAP(() => {
+    if (vehiclePanel) {
+      gsap.to(vehiclePanelRef.current, {
+        transform: "translateY(0)",
+      });
+    } else {
+      gsap.to(vehiclePanelRef.current, {
+        transform: "translateY(100%)",
+      });
+    }
+  }, [vehiclePanel]);
+
+  useGSAP(() => {
+    if (confirmRide) {
+      gsap.to(confirmRideRef.current, {
+        transform: "translateY(0)",
+      });
+    } else {
+      gsap.to(confirmRideRef.current, {
+        transform: "translateY(100%)",
+      });
+    }
+  }, [confirmRide]);
   return (
     <>
-      <div className="h-screen relative">
+      <div className="h-screen relative overflow-hidden">
         <img
           className="w-20 absolute left-1 top-2"
           src="/uber-logo-png.png"
@@ -48,7 +77,7 @@ const home = () => {
           <img className="h-full w-full object-cover" src="Map.png" alt="Map" />
         </div>
         <div className=" h-screen absolute top-0 w-full flex flex-col justify-end">
-          <div className="h-[30%] p-6 bg-white relative">
+          <div className="h-[30%] p-6 bg-white relative ">
             <h5
               ref={panalClose}
               onClick={() => {
@@ -79,11 +108,23 @@ const home = () => {
             </form>
           </div>
           <div ref={panalRef} className="h-[0] bg-white">
-            <LocationPanel />
+            <LocationPanel
+              setPanal={setPanal}
+              setVehiclePanal={setVehiclePanal}
+            />
           </div>
         </div>
-        <div className="fixed z-10">
-              <img src="car-white.svg" alt="" />
+        <div
+          ref={vehiclePanelRef}
+          className="fixed w-full z-10 bottom-0 translate-y-full bg-white px-2 py-6"
+        >
+          <VehiclePanel setVehiclePanal={setVehiclePanal} />
+        </div>
+        <div
+          ref={confirmRideRef}
+          className="fixed w-full z-10 bottom-0 translate-y-full bg-white px-2 py-6"
+        >
+          <ConfirmRide setConfirmRide={setConfirmRide} />
         </div>
       </div>
     </>
