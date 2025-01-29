@@ -12,7 +12,13 @@ const VehiclePanel = (props) => {
         <i className="ri-arrow-down-wide-line"></i>
       </h5>
       <h3 className="text-2xl font-semibold mb-3">Choose a Vehicle</h3>
-      <div className="flex w-full border-2 active:border-black mb-2 rounded-xl items-center justify-between p-2">
+      <div
+        onClick={() => {
+          props.setConfirmRide(true);
+          props.setVehiclePanal(false);
+        }}
+        className="flex w-full border-2 active:border-black mb-2 rounded-xl items-center justify-between p-2"
+      >
         <img className="h-20" src="car-white.svg" alt="" />
         <div className=" w-1/2">
           <h4 className="font-medium">
@@ -26,7 +32,13 @@ const VehiclePanel = (props) => {
         </div>
         <h2 className="text-xl font-semibold">₹193.50</h2>
       </div>
-      <div className="flex w-full border-2 active:border-black mb-2 rounded-xl items-center justify-between p-2">
+      <div
+        onClick={() => {
+          props.setConfirmRide(true);
+          props.setVehiclePanal(false);
+        }}
+        className="flex w-full border-2 active:border-black mb-2 rounded-xl items-center justify-between p-2"
+      >
         <img className="h-12" src="uberXL.png" alt="" />
         <div className=" w-1/2">
           <h4 className="font-medium">
@@ -40,7 +52,13 @@ const VehiclePanel = (props) => {
         </div>
         <h2 className="text-xl font-semibold">₹423.50</h2>
       </div>
-      <div className="flex w-full border-2 active:border-black mb-2 rounded-xl items-center justify-between p-2">
+      <div
+        onClick={() => {
+          props.setConfirmRide(true);
+          props.setVehiclePanal(false);
+        }}
+        className="flex w-full border-2 active:border-black mb-2 rounded-xl items-center justify-between p-2"
+      >
         <img className="h-12 ml-3" src="bike.png" alt="" />
         <div className=" w-1/2">
           <h4 className="font-medium">
@@ -54,7 +72,13 @@ const VehiclePanel = (props) => {
         </div>
         <h2 className="text-xl font-semibold">₹63.50</h2>
       </div>
-      <div className="flex w-full border-2 active:border-black mb-2 rounded-xl items-center justify-between p-2">
+      <div
+        onClick={() => {
+          props.setConfirmRide(true);
+          props.setVehiclePanal(false);
+        }}
+        className="flex w-full border-2 active:border-black mb-2 rounded-xl items-center justify-between p-2"
+      >
         <img className="h-12" src="auto.png" alt="" />
         <div className=" w-1/2">
           <h4 className="font-medium">
