@@ -5,18 +5,20 @@ import UserLogin from "./pages/userLogin";
 import UserRegister from "./pages/userRegister";
 import CaptainLogin from "./pages/captainLogin";
 import CaptionRegister from "./pages/captainRegister";
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import UserProtectedWrapper from "./pages/UserProtectedWrapper";
 import UserLogout from "./pages/UserLogout";
 import CaptainHome from "./pages/CaptainHome";
 import CaptainProtectionWrapper from "./pages/CaptainProtectionWrapper";
 import CaptainLogout from "./pages/CaptainLogout";
+import Riding from "./pages/Riding";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<GetStarted />} />
       <Route path="/login" element={<UserLogin />} />
+      <Route path="/riding" element={<Riding />} />
       <Route path="/signup" element={<UserRegister />} />
       <Route path="/captain-login" element={<CaptainLogin />} />
       <Route path="/captain-signup" element={<CaptionRegister />} />
