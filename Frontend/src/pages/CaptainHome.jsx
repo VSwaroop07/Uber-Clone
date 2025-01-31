@@ -17,8 +17,8 @@ const CaptainHome = () => {
         <div className="h-1/2">
           <img className="h-full w-full object-cover" src="Map.png" alt="Map" />
         </div>
-        <div className="h-1/2 p-3">
-          <div className="flex items-center justify-between">
+        <div className="h-1/2 p-3 ">
+          <div className="">
             <div className="">
               <img className="h-20" src="car-white.svg" alt="" />
               <h2 className="text-lg font-medium">Swaroop Vyawahare</h2>
@@ -28,19 +28,19 @@ const CaptainHome = () => {
             </div>
           </div>
           <div className="text-center">
-            <i className="ri-time-line"></i>
-            <h5>10.2</h5>
-            <p>Online Hours</p>
+            <i className="text-2xl font-thin ri-time-line"></i>
+            <h5 className="text-lg font-medium">10.2</h5>
+            <p className="text-sm text-gray-600">Online Hours</p>
           </div>
-          <div>
-            <i className="ri-speed-up-line"></i>
-            <h5>10.2</h5>
-            <p>Online Hours</p>
+          <div className="text-center">
+            <i className="text-2xl font-thin ri-speed-up-line"></i>
+            <h5 className="text-lg font-medium">10.2</h5>
+            <p className="text-sm text-gray-600">Online Hours</p>
           </div>
-          <div>
-            <i className="ri-speed-up-line"></i>
-            <h5>10.2</h5>
-            <p>Online Hours</p>
+          <div className="text-center">
+            <i className="text-2xl font-thin ri-speed-up-line"></i>
+            <h5 className="text-lg font-medium">10.2</h5>
+            <p className="text-sm text-gray-600">Online Hours</p>
           </div>
         </div>
       </div>
