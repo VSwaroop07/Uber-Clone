@@ -45,7 +45,7 @@ const captainLogin = () => {
               id=""
               required
               placeholder="email@example.com"
-              //RealTime value Update
+              //RealTime value Update | You Have To Do it?
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
