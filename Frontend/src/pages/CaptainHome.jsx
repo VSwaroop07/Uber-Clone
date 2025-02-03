@@ -14,33 +14,35 @@ const CaptainHome = () => {
             <i className="ri-logout-box-r-line"></i>
           </Link>
         </div>
-        <div className="h-1/2">
+        <div className="h-[70vh]">
           <img className="h-full w-full object-cover" src="Map.png" alt="Map" />
         </div>
-        <div className="h-1/2 p-3 ">
-          <div className="">
+        <div className="h-[30vh] p-3 ">
+          <div className="flex gap-5 items-center">
             <div className="">
-              <img className="h-20" src="car-white.svg" alt="" />
-              <h2 className="text-lg font-medium">Swaroop Vyawahare</h2>
+              <img className="h-10 rounded-full" src="Public PP.jpg" alt="" />
             </div>
             <div className="">
+              <h2 className="text-lg font-medium">Swaroop Vyawahare</h2>
               <h5>₹26,300</h5>
             </div>
           </div>
-          <div className="text-center">
-            <i className="text-2xl font-thin ri-time-line"></i>
-            <h5 className="text-lg font-medium">10.2</h5>
-            <p className="text-sm text-gray-600">Online Hours</p>
-          </div>
-          <div className="text-center">
-            <i className="text-2xl font-thin ri-speed-up-line"></i>
-            <h5 className="text-lg font-medium">10.2</h5>
-            <p className="text-sm text-gray-600">Online Hours</p>
-          </div>
-          <div className="text-center">
-            <i className="text-2xl font-thin ri-speed-up-line"></i>
-            <h5 className="text-lg font-medium">10.2</h5>
-            <p className="text-sm text-gray-600">Online Hours</p>
+          <div className="flex justify-center items-center mt-4 gap-5">
+            <div className="text-center">
+              <i className="text-2xl font-thin ri-time-line"></i>
+              <h5 className="text-lg font-medium">10.2</h5>
+              <p className="text-sm text-gray-600">Online Hours</p>
+            </div>
+            <div className="text-center">
+              <i className="text-2xl font-thin ri-speed-up-line"></i>
+              <h5 className="text-lg font-medium">10.2</h5>
+              <p className="text-sm text-gray-600">Online Hours</p>
+            </div>
+            <div className="text-center">
+              <i className="text-2xl font-thin ri-speed-up-line"></i>
+              <h5 className="text-lg font-medium">10.2</h5>
+              <p className="text-sm text-gray-600">Online Hours</p>
+            </div>
           </div>
         </div>
       </div>

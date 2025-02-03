@@ -42,7 +42,7 @@ const captianSchema = new mongoose.Schema({
         plate: {
             type: String,
             required: true,
-            minlength: [3, 'Plate Name at least be 3 characteres or long'],
+            minlength: [2, 'Plate Name at least be 2 characteres or long'],
         },
         capacity: {
             type: Number,
