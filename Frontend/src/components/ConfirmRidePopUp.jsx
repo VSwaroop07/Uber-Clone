@@ -1,21 +1,21 @@
 import React from "react";
 
-const RidePopUp = (props) => {
+const ConfirmRidePopUp = (props) => {
   return (
     <div>
       <h5
         onClick={() => {
-          props.setRidePopUpPanel(false);
+          props.setConfirmRidePopUpPanel(false);
         }}
         className="absolute top-2 right-3 text-xl cursor-pointer"
       >
         <i className="ri-arrow-down-wide-line"></i>
       </h5>
-      <h3 className="text-2xl font-semibold mb-5">New Ride Available!</h3>
+      <h3 className="text-2xl font-semibold mb-5">Ride Confiremation</h3>
       <div className="flex items-center justify-between p-4 bg-yellow-200 rounded-lg">
         <div className="flex items-center gap-3">
-        <img className="h-12 rounded-full" src="Public PP.jpg" alt="" />
-        <h2 className="text-lg font-medium">Swaroop Dada</h2>
+          <img className="h-12 rounded-full" src="Public PP.jpg" alt="" />
+          <h2 className="text-lg font-medium">Swaroop Dada</h2>
         </div>
         <h5 className="text-lg font-semibold">2.2KM</h5>
       </div>
@@ -43,26 +43,27 @@ const RidePopUp = (props) => {
             </div>
           </div>
         </div>
-        <button
-          onClick={() => {
-            props.setConfiremRidePopUpPanel(true);
-            props.setRidePopUpPanel(false);
-          }}
-          className="w-full bg-green-500 rounded-md text-white font-semibold p-2"
-        >
-          Accept
-        </button>
-        <button
-          onClick={() => {
-            props.setRidePopUpPanel(false);
-          }}
-          className="w-full -mt-2 bg-gray-300 rounded-md text-gray-700 font-semibold p-2"
-        >
-          Ignore
-        </button>
       </div>
+      <button
+          onClick={() => {
+            props.setConfirmRidePopUpPanel(true);
+            props.setRidePopUpPanel(false);
+          }}
+          className="w-full bg-green-500 mt-3 rounded-md text-white font-semibold p-2"
+        >
+          Confirm
+        </button>
+        <button
+          onClick={() => {
+            props.setRidePopUpPanel(false);
+            props.setConfirmRidePopUpPanel(false);
+          }}
+          className="w-full mt-2 bg-red-500 rounded-md text-white font-semibold p-2"
+        >
+          Cancle
+        </button>
     </div>
   );
 };
 
-export default RidePopUp;
+export default ConfirmRidePopUp;
