@@ -66,7 +66,6 @@ const userLogin = () => {
               id=""
               required
               placeholder="Password"
-              //RealTime value Update
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

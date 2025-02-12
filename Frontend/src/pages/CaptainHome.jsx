@@ -23,6 +23,7 @@ const CaptainHome = () => {
       });
     }
   }, [RidePopUpPanel]);
+  
   useGSAP(() => {
     if (ConfirmRidePopUpPanel) {
       gsap.to(ConfirmRidePopUpPanelRef.current, {
